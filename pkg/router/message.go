@@ -15,6 +15,15 @@ func InteractionCreate(s *discordgo.Session, i *discordgo.InteractionCreate) {
 		url := i.ApplicationCommandData().Options[0].StringValue()
 		guildID := i.GuildID
 
+		// Verifica se o bot está em um canal antes de sair
+		if tools.IsBotInVoiceChannel(s, guildID) {
+			if err := tools.LeaveVoiceChannel(s, guildID); err != nil {
+				log.Println("Error leaving voice channel:", err)
+				tools.Respond(s, i, "Erro ao sair do canal de voz.")
+				return
+			}
+		}
+
 		// Obtém o canal de voz do usuário que enviou o comando
 		voiceChannelID, err := tools.GetVoiceChannel(s, guildID, i.Member.User.ID)
 		if err != nil {
