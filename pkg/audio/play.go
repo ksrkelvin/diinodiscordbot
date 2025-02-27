@@ -53,7 +53,6 @@ func Play(session *discordgo.Session, guildID, channelID, audioURL string) error
 
 	pageDecoder := ogg.NewDecoder(ffmpegPipe)
 	pageDecoder.Decode()
-	pageDecoder.Decode()
 
 	// Sinaliza ao Discord que estamos enviando áudio
 	voice.Speaking(true)
