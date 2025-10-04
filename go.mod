@@ -4,6 +4,8 @@ go 1.21.13
 
 require github.com/bwmarrin/discordgo v0.28.1
 
+require github.com/joho/godotenv v1.5.1 // indirect
+
 require (
 	github.com/gorilla/websocket v1.4.2 // indirect
 	github.com/jonas747/ogg v0.0.0-20161220051205-b4f6f4cf3757

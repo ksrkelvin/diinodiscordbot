@@ -8,6 +8,7 @@ import (
 	"log/slog"
 
 	"github.com/bwmarrin/discordgo"
+	_ "github.com/joho/godotenv/autoload"
 )
 
 func main() {

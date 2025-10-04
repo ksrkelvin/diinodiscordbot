@@ -7,9 +7,7 @@ import (
 )
 
 var (
-	// BotToken é o token do bot
 	BotToken = os.Getenv("TOKEN")
-	// Commands  são os comandos que o bot pode executar
 	Commands = []*discordgo.ApplicationCommand{
 		{
 			Name:        "play",

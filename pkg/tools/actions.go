@@ -7,7 +7,6 @@ import (
 	"github.com/bwmarrin/discordgo"
 )
 
-// Respond - Envia uma resposta para o usuário no Discord
 func Respond(s *discordgo.Session, i *discordgo.InteractionCreate, content string) {
 	s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
 		Type: discordgo.InteractionResponseChannelMessageWithSource,
@@ -17,7 +16,6 @@ func Respond(s *discordgo.Session, i *discordgo.InteractionCreate, content strin
 	})
 }
 
-// RegisterCommands - Registra os Slash Commands no Discord
 func RegisterCommands(s *discordgo.Session) {
 	for _, cmd := range config.Commands {
 		_, err := s.ApplicationCommandCreate(s.State.User.ID, "", cmd)
